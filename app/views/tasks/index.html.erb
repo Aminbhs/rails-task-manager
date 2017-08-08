@@ -1,0 +1,16 @@
+<h1>My tasks</h1>
+
+
+<ul class="list-unstyled">
+<% @tasks.each do |task| %>
+  <li>   <%= link_to task.name.capitalize, task_path(task) %> |
+    <%  if task.done?%>
+      <i class="fa fa-check" aria-hidden="true"></i>
+    <% else %>
+      <i class="fa fa-times" aria-hidden="true"></i>
+    <%end  %>
+  </li>
+<% end %>
+</ul>
+
+<%= link_to "Ajouter une tâche", new_task_path %>

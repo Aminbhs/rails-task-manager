@@ -1,0 +1,14 @@
+<h1> <%= @task.name %> </h1>
+<%  if @task.done?%>
+ <p>  <i class="fa fa-check" aria-hidden="true"></i>
+</p>
+<% else %>
+ <p> <i class="fa fa-times" aria-hidden="true"></i> </p>
+<%end  %>
+
+<%= link_to "Modifier la tâche", edit_task_path(@task.id) %>
+
+
+<%= button_to "Delete", task_path(@task), method: :delete %>
+
+<%= button_to "Check", check_path(@task) %>
